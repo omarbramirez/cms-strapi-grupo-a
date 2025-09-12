@@ -4,14 +4,20 @@ import Articles from "./components/Articles";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Agenda from "./components/Agenda";
+import Newsletter from "./components/Newsletter";
+import ResponsiveMenu from "./components/ResponsiveMenu";
 
 export default function Home() {
   return (
     <>
+    <ResponsiveMenu/>
     <Hero/>
     <Navbar/>
-    {/* <Articles/> */}
+    <div className="flex flex-col lg:flex-row items-start justify-around p-[2vw]">
     <Agenda/>
+        <Articles/>
+    </div>
+    <Newsletter/>
     <Footer/>
     
     </>

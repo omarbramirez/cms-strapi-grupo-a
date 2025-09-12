@@ -2,7 +2,7 @@
 
 :root {
   --color-light: #fff;
-  --color-black: #191919;
+  --color-dark: #191919;
   /* --color-primary: #dfb488; */
   --color-primary: #786350;
   --color-secondary: #d7b221;
@@ -13,11 +13,21 @@
 
 @theme inline {
   --color-light: var(--color-light);
-  --color-black: var(--color-black);
+  --color-dark: var(--color-dark);
   --font-heading: var(--font-heading);
   --font-body: var(--font-body);
   --color-primary: var(--color-primary);
   --color-secondary:var(--color-secondary);
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
 }
 
 /* @media (prefers-color-scheme: dark) {
@@ -29,15 +39,15 @@
 
 body {
   background: var(--color-light);
-  color: var(--color-black);
+  color: var(--color-dark);
   font-family:var(--font-body);
+  line-height: 1.4em;
 }
 
 h1 {
   font-family: var(--font-heading);
   font-weight: 700;
-  color: var(--color-black);
-  margin-bottom: 1rem;
+  color: var(--color-dark);
 }
 h3{
   font-family: var(--font-heading);
@@ -45,10 +55,20 @@ h3{
 }
 a{
   color: var(--color-secondary);
+  line-height: 1em;
 }
 a:hover{
   color: var(--color-primary);
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-duration: 500ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+span{
+  line-height: 1em;
 }
 li{
   color: var(--color-light);
+}
+button{
+    font-family:var(--font-body);
 }

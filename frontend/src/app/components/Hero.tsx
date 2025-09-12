@@ -5,8 +5,8 @@ import Image from 'next/image';
 const Hero = async () => {
   const { title, description, image } = await getHomeInfo();
   return (
-    <div className='w-full px-10 py-5 mb-20 box-border text-center'>
-      <div className="w-[90%] mx-auto">
+    <div className='block w-full px-10 py-5  box-border text-center '>
+      <div className="w-[90%] mx-auto my-20">
         <Image
           src="/logo.svg"
           alt="My Icon"
