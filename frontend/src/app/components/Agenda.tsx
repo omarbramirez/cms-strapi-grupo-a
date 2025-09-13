@@ -2,11 +2,7 @@ import { getEvents } from '@/lib/get'
 import React from 'react'
 import Event from './ui/Event';
 
-export interface EventData {
-  id: string;
-  name: string;
-  date: string;
-}
+import {EventData} from '@/lib/types'
 
 const Agenda = async () => {
   const events: EventData[] = await getEvents();

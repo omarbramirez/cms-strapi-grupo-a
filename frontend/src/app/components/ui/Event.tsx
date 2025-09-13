@@ -1,19 +1,6 @@
 import React from 'react'
 import Link from "next/link"
-
-export interface EventData {
-date: string; 
-time: string;
-title: string;
-slug: string;
-categoryName: string; 
-}
-
-export interface EventComponentProps {
-  event: EventData;
-  key: number;
-}
-
+import {EventData,EventComponentProps} from '@/lib/types'
 
 const Event = ({event, key}: EventComponentProps) => {
 
