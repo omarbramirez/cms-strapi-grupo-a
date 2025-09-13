@@ -1,25 +1,17 @@
-import { query } from "./strapi";
+import { query } from "@/lib/strapi";
 const { STRAPI_HOST } = process.env;
-
-export function getHomeInfo() {
-    return query("home?populate=cover").then(res => {
-        const { title, description, cover } = res.data;
-        const image = `${STRAPI_HOST}${cover.url}`
-        return { title, description, image }
-    }
-    )
-}
+import {StrapiResponse,StrapiArticle,ArticleData,StrapiEvent,EventData} from "@/lib/types"
 
 
 
-export function getArticles() {
-    return query("articles?fields[0]=title&fields[1]=slug&fields[2]=description&fields[3]=createdAt&populate[cover][fields][0]=url").then(res => {
-        return res.data.map(article => {
-            const { title, slug, description, cover: rawImage, createdAt} = article
+export async function getArticles(): Promise<ArticleData[]> {
+    const res = await query<StrapiResponse<StrapiArticle>>("articles?fields[0]=title&fields[1]=slug&fields[2]=description&fields[3]=createdAt&populate[cover][fields][0]=url");
+    
 
-
-
-                  const dateObj = new Date(createdAt);
+    
+        return res.data.map((article )=> {
+            console.log(article)
+                  const dateObj = new Date(article.createdAt);
 
                   const day = dateObj.toLocaleDateString("es-MX", {
                 day: "numeric",
@@ -32,41 +24,45 @@ export function getArticles() {
 
             const date = `${day} ${month}`;
 
-            const image = `${STRAPI_HOST}${rawImage.url}`
-            return { title, slug, description, image,date }
+            const image = `${STRAPI_HOST}${article.cover.url}`
+            return { title: article.title, slug:article.slug, description:article.description, image,date }
         })
     }
-    )
-}
 
-export function getEvents() {
-    return query("events?fields[0]=datetime&fields[1]=title&fields[2]=slug&populate[category][fields][0]=name").then(res => {
-        return res.data.map(event => {
-            const { datetime, title, slug, category } = event
+export async function getEvents(): Promise<EventData[]> {
+  const res = await query<StrapiResponse<StrapiEvent>>(
+    "events?fields[0]=datetime&fields[1]=title&fields[2]=slug&populate[category][fields][0]=name");
 
-            const dateObj = new Date(datetime);
+  return res.data.map((event) => {
+    const dateObj = new Date(event.datetime);
 
-            const day = dateObj.toLocaleDateString("es-MX", {
-                day: "numeric",
-                timeZone: "America/Mexico_City"
-            });
-            const month = dateObj.toLocaleDateString("es-MX", {
-                month: "short",
-                timeZone: "America/Mexico_City"
-            }).toUpperCase();
+    const day = dateObj.toLocaleDateString("es-MX", {
+      day: "numeric",
+      timeZone: "America/Mexico_City",
+    });
+    const month = dateObj
+      .toLocaleDateString("es-MX", {
+        month: "short",
+        timeZone: "America/Mexico_City",
+      })
+      .toUpperCase();
 
-            const date = `${day} ${month}`;
+    const date = `${day} ${month}`;
+    const time = dateObj.toLocaleTimeString("es-MX", {
+      hour: "2-digit",
+      minute: "2-digit",
+      hour12: false,
+      timeZone: "America/Mexico_City",
+    });
 
-            const time = dateObj.toLocaleTimeString("es-MX", {
-                hour: "2-digit",
-                minute: "2-digit",
-                hour12: false,
-                timeZone: "America/Mexico_City"
-            });
+    const categoryName = event.category?.name.toUpperCase() || "Sin categoría"
 
-            const categoryName = category.name.toUpperCase();
-
-            return { date, time, title, slug, categoryName };
-        })
-    })
+    return {
+      date,
+      time,
+      title: event.title,
+      slug: event.slug,
+      categoryName,
+    };
+  });
 }

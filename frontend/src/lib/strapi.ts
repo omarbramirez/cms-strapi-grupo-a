@@ -1,9 +1,16 @@
-const { STRAPI_HOST, STRAPI_TOKEN } = process.env
 
-export function query(url: string) {
-    return fetch(`${STRAPI_HOST}/api/${url}`, {
+
+export async function query<T>(url: string): Promise<T> {
+    const { STRAPI_HOST, STRAPI_TOKEN } = process.env;
+    const res = await fetch(`${STRAPI_HOST}/api/${url}`, {
         headers: {
             Authorization: `Bearer ${STRAPI_TOKEN}`
         }
-    }).then(res => res.json())
+    });
+
+    if(!res.ok){
+        throw new Error(`API call failed: ${res.statusText}`)
+    }
+
+    return res.json() as Promise<T>
 }
