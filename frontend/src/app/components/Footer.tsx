@@ -9,8 +9,8 @@ const Footer = () => {
           <h3 className="text-lg mb-4 text-[var(--color-light)]">Menú Principal</h3>
           <ul className="space-y-2 text-sm">
             <li className="font-medium"><a href="#">El Grupo:</a></li>
-            <ul className="ml-4 space-y-1">
-              <li><a href="#">Fundadores</a></li>
+            <ul className="ml-4 space-y-1 flex flex-col justify-center">
+              <li><a href="#" >Fundadores</a></li>
               <li><a href="#">Historia</a></li>
               <li><a href="#">Objetivos</a></li>
               <li><a href="#">Miembros Actuales</a></li>

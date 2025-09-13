@@ -14,7 +14,7 @@ const Article = ({article, index}) => {
     <span className="block mt-1 mb-2 text-dark transition-colors duration-500 group-hover:text-[var(--color-secondary)]">
       {`${article.date} ${new Date().getFullYear()}`}
     </span>
-    <span className="block w-1/2 font-heading font-normal text-3xl lg:text-2xl text-[var(--color-dark)] transition-colors duration-500 group-hover:text-[var(--color-secondary)]">
+    <span className="block md:w-1/2 font-heading font-normal text-3xl text-[var(--color-dark)] transition-colors duration-500 group-hover:text-[var(--color-secondary)]">
       {article.title}
     </span>
 </Link>

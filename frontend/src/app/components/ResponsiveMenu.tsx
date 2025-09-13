@@ -43,18 +43,30 @@ setIsOpen(false)
                   
       </div>
       <ul
-        className={` bg-light ${isOpen ? " absolute top-[0rem]" : "absolute top-[-20rem]"} w-full h-[20rem] shadow-lg flex flex-col justify-center gap-4 p-6 transform transition-all duration-500 ease-in-out !z-98  ${isScroll ? "bg-light/90 backdrop-blur-lg shadow-sm " : " "}`}
+        className={` bg-light ${isOpen ? " absolute top-[0rem]" : "absolute top-[-40rem]"} w-full h-[40rem] shadow-lg flex flex-col justify-center gap-4 p-6 transform transition-all duration-500 ease-in-out !z-98  ${isScroll ? "bg-light/90 backdrop-blur-lg shadow-sm " : " "}`}
       >
         <li>
           <Link href="#" className="flex flex-row text-xl items-center">Agenda <CalendarDays className="ml-2" /></Link>
 
         </li>
-        <li>
-          <Link href="#" className='text-xl'>El grupo</Link>
-        </li>
-        <li>
-          <Link href="#" className='text-xl'>Revista América</Link>
-        </li>
+                    <li>
+                        <Link href="#" className='text-xl'>El grupo</Link>
+
+                        <ul className="block p-4 space-y-2 mt-2 ">
+                            <li><Link href="#" className='text-xl'>Fundadores</Link></li>
+                            <li><Link href="#" className='text-xl'>Historia</Link></li>
+                            <li><Link href="#" className='text-xl'>Objetivos</Link></li>
+                            <li><Link href="#" className='text-xl'>Miembros Actuales</Link></li>
+                            <li><Link href="#" className='text-xl'>Directiva</Link></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <Link href="#" className='text-xl'>Revista América</Link>
+                            <ul className="block text-white p-4 space-y-2 mt-2">
+                            <li><Link href="#" className='text-xl'>Historia Revista América</Link></li>
+                            <li><Link href="#" className='text-xl'>Descargar Revista América</Link></li>
+                        </ul>
+                    </li>
         <li>
           <Link href="#" className='text-xl'>Contacto</Link>
         </li>
