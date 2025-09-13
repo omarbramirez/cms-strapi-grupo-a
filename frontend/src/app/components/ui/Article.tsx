@@ -1,9 +1,10 @@
 import React from 'react'
 import Link from "next/link"
 
+
 const Article = ({article, index}) => {
   return (
-<Link href="#" className="group mt-1 flex flex-col !cursor-pointer mb-12">
+<Link id={index} href="#" className="group mt-1 flex flex-col !cursor-pointer mb-12">
   <div className="overflow-hidden rounded-2xl h-60 mb-2">
     <img
       src={article.image}

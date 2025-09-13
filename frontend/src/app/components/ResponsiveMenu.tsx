@@ -3,6 +3,8 @@ import React, { useState, useEffect, useRef } from 'react'
 import { Menu, X, CalendarDays } from "lucide-react";
 import Link from "next/link"
 import Research from './ui/Research';
+import Image from 'next/image';
+
 const ResponsiveMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScroll, setIsScroll] = useState(false);
@@ -39,11 +41,21 @@ setIsOpen(false)
     <nav className={`w-full fixed lg:hidden !z-99`}>
       <div className={`flex justify-between items-center w-screen p-3 px-5 bg-light border-b border-gray-700 !z-100 absolute top-[0rem]`}  aria-label="Toggle menu">
         {isOpen ? <X className="text-dark" onClick={closeMenu}/>: <Menu className="text-dark" onClick={ openMenu }/>}
+                                <div className={`w-2/5 mx-auto opacity-0  ${isScroll ? "opacity-100" : ""} transform transition-all duration-500`}>
+                          <Image
+                            src="/logo.svg"
+                            alt="My Icon"
+                            width={0}
+                            height={0}
+                            sizes="100vw"
+                            className="w-full h-auto"
+                          />
+                        </div>
                         <Research/>
-                  
+
       </div>
       <ul
-        className={` bg-light ${isOpen ? " absolute top-[0rem]" : "absolute top-[-40rem]"} w-full h-[40rem] shadow-lg flex flex-col justify-center gap-4 p-6 transform transition-all duration-500 ease-in-out !z-98  ${isScroll ? "bg-light/90 backdrop-blur-lg shadow-sm " : " "}`}
+        className={` bg-light ${isOpen ? " absolute top-[0rem]" : "absolute top-[-40rem]"} w-full h-[40rem] shadow-lg flex flex-col justify-center gap-4 p-6 transform transition-all duration-500 ease-in-out !z-98 bg-light/80 backdrop-blur-lg shadow-sm`}
       >
         <li>
           <Link href="#" className="flex flex-row text-xl items-center">Agenda <CalendarDays className="ml-2" /></Link>

@@ -1,6 +1,5 @@
 import { getArticles } from '@/lib/get'
 import React from 'react'
-import Link from "next/link"
 import Article from './ui/Article';
 const Articles = async() => {
     const articles = await getArticles() 

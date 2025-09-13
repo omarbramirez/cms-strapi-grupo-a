@@ -1,16 +1,11 @@
-'use client'
-import React, {useState, useRef, useEffect} from 'react'
+
+import React from 'react'
 import Link from "next/link"
 import { CalendarDays } from 'lucide-react';
 import Search from './ui/Research';
 import Research from './ui/Research';
 
 const Navbar = () => {
-
-const [open, setOpen] = useState(false);
-const liRef = useRef<HTMLElement>(null);
-
-
 
     return (
         <nav>
