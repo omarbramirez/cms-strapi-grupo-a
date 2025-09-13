@@ -1,10 +1,22 @@
 import React from 'react'
 import Link from "next/link"
 
+export interface ArticleData {
+  id: string; 
+  title: string;
+  date: string;
+  image: string; 
+}
 
-const Article = ({article, index}) => {
+export interface ArticleComponentProps {
+  article: ArticleData;
+  key: number;
+}
+
+
+const Article = ({article, key}: ArticleComponentProps) => {
   return (
-<Link id={index} href="#" className="group mt-1 flex flex-col !cursor-pointer mb-12">
+<Link href="#" className="group mt-1 flex flex-col !cursor-pointer mb-12">
   <div className="overflow-hidden rounded-2xl h-60 mb-2">
     <img
       src={article.image}

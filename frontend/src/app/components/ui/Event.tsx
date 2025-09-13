@@ -1,10 +1,24 @@
 import React from 'react'
 import Link from "next/link"
 
-const Event = ({event, key}) => {
+export interface EventData {
+date: string; 
+time: string;
+title: string;
+slug: string;
+categoryName: string; 
+}
+
+export interface EventComponentProps {
+  event: EventData;
+  key: number;
+}
+
+
+const Event = ({event, key}: EventComponentProps) => {
 
   return (
-    <div id={key} className='min-h-38 min-w-70 group bg-[var(--color-primary)] transition-colors duration-500 hover:bg-[var(--color-secondary)] rounded-2xl p-5 pt-3 m-1 mt-0 flex flex-col !cursor-pointer flex-1 lg:shrink-0'>
+    <div className='min-h-38 min-w-70 group bg-[var(--color-primary)] transition-colors duration-500 hover:bg-[var(--color-secondary)] rounded-2xl p-5 pt-3 m-1 mt-0 flex flex-col !cursor-pointer flex-1 lg:shrink-0'>
       <span className='text-white opacity-85 group-hover:opacity-100 
              transition-opacity duration-500'>{event.date} | {event.time}</span>
       <p className='text-heading text-[var(--color-light)] opacity-75 group-hover:opacity-90 

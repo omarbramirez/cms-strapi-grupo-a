@@ -1,8 +1,17 @@
 import { getArticles } from '@/lib/get'
 import React from 'react'
 import Article from './ui/Article';
+
+export interface ArticleData {
+  id: string; 
+  title: string;
+  date: string;
+  image: string; 
+}
+
 const Articles = async() => {
-    const articles = await getArticles() 
+  
+    const articles: ArticleData[] = await getArticles();
   return (
   <div className=' w-full box-border lg:w-6/8 mt-10 lg:mt-0'>
       <h1 className='text-2xl text-center  lg:text-left truncate'>NOTICIAS</h1>
