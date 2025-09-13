@@ -1,13 +1,7 @@
 import { getArticles } from '@/lib/get'
 import React from 'react'
 import Article from './ui/Article';
-
-export interface ArticleData {
-  id: string; 
-  title: string;
-  date: string;
-  image: string; 
-}
+import {ArticleData} from '@/lib/types'
 
 const Articles = async() => {
   

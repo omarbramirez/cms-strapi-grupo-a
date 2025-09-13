@@ -1,17 +1,8 @@
 import React from 'react'
 import Link from "next/link"
 
-export interface ArticleData {
-  id: string; 
-  title: string;
-  date: string;
-  image: string; 
-}
+import {ArticleData,ArticleComponentProps} from '@/lib/types'
 
-export interface ArticleComponentProps {
-  article: ArticleData;
-  key: number;
-}
 
 
 const Article = ({article, key}: ArticleComponentProps) => {
