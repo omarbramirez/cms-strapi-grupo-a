@@ -5,15 +5,22 @@ import Event from './ui/Event';
 import {EventData} from '@/lib/types'
 
 const Agenda = async () => {
-  const events: EventData[] = await getEvents();
+  let events: EventData[] = [];
+  
+  try {
+    events = await getEvents();
+  } catch (error) {
+    console.error('Error al obtener eventos:', error);
+  }
    
-
+  
+  
   return (
     <div className='w-full box-border lg:w-2/8 mt-10 lg:mt-0'>
       <h1 className='text-2xl text-center  lg:text-left truncate'>PRÓXIMOS EVENTOS</h1>
 <div className="flex flex-row lg:flex-col  overflow-x-scroll lg:overflow-x-visible my-5 pb-5">
 
-      {events.map((event, index) => (
+      {events && events.map((event, index) => (
         <Event event={event} key={index}/>
       ))
       

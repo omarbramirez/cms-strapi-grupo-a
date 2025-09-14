@@ -5,12 +5,21 @@ import {ArticleData} from '@/lib/types'
 
 const Articles = async() => {
   
-    const articles: ArticleData[] = await getArticles();
+    let articles: ArticleData[] = []
+
+    try{
+      articles = await getArticles();
+    } catch (error) {
+    console.error('Error al obtener eventos:', error);
+  }
+
+
+
   return (
   <div className=' w-full box-border lg:w-6/8 mt-10 lg:mt-0'>
       <h1 className='text-2xl text-center  lg:text-left truncate'>NOTICIAS</h1>
       <div className='mt-5 px-5'>
-      {articles.map((article, index) => (
+      {articles && articles.map((article, index) => (
         <Article article={article} key={index}/>
       ))
 
