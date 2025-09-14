@@ -23,13 +23,15 @@ export async function query<T>(url: string): Promise<T> {
     }
 
     return res.json() as Promise<T>;
-  } catch (error: any) {
-    // Si la llamada falla (por URL inválida, timeout, etc.)
-    if (error.name === 'AbortError') {
-      console.error('API call timed out.');
-    } else {
-      console.error('Error en la función query:', error.message);
-    }
-    return { data: [] } as T; // Devuelve un objeto vacío
+  } catch (error: unknown) {
+  // Ahora debes verificar que el error es del tipo que esperas
+  if (error instanceof Error) {
+    console.error('Error en la función query:', error.message);
+    return { data: [] } as T;
+  } else {
+    // Si no es una instancia de Error, puedes manejarlo de otra manera
+    console.error('Error desconocido:', error);
+    return { data: [] } as T;
   }
+}
 }
