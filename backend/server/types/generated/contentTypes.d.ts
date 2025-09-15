@@ -420,7 +420,6 @@ export interface ApiArticleArticle extends Schema.CollectionType {
       'manyToOne',
       'api::category.category'
     >;
-    cover: Attribute.Media<'images' | 'files' | 'videos'>;
     createdAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
       'api::article.article',
