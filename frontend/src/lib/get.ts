@@ -25,7 +25,7 @@ export async function getArticles(): Promise<ArticleData[]> {
             const date = `${day} ${month}`;
 
             // const image = `${STRAPI_HOST}${article?.attributes.cover?.data?.attributes?.url}`
-            return { title: article.attributes.title, slug:article.attributes.slug, description:article.attributes.description, image,date }
+            return { title: article.attributes.title, slug:article.attributes.slug, description:article.attributes.description, image: article.attributes.imageurl ,date }
         })
     }
 

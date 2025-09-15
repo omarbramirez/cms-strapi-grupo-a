@@ -59,7 +59,7 @@ title: string;
 slug: string;
 description: string;
 createdAt: string;
-cover: StrapiData<StrapiCoverAttributes>;
+imageurl: string;
 }
 }
 
