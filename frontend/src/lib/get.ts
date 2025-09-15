@@ -11,7 +11,7 @@ export async function getArticles(): Promise<ArticleData[]> {
     
         return res.data.map((article )=> {
             console.log(article)
-                  const dateObj = new Date(article.createdAt);
+                  const dateObj = new Date(article.attributes.createdAt);
 
                   const day = dateObj.toLocaleDateString("es-MX", {
                 day: "numeric",
@@ -24,8 +24,8 @@ export async function getArticles(): Promise<ArticleData[]> {
 
             const date = `${day} ${month}`;
 
-            const image = `${STRAPI_HOST}${article.cover.url}`
-            return { title: article.title, slug:article.slug, description:article.description, image,date }
+            const image = `${STRAPI_HOST}${article?.attributes.cover?.data?.attributes?.url}`
+            return { title: article.attributes.title, slug:article.attributes.slug, description:article.attributes.description, image,date }
         })
     }
 
@@ -34,7 +34,7 @@ export async function getEvents(): Promise<EventData[]> {
     "events?fields[0]=datetime&fields[1]=title&fields[2]=slug&populate[category][fields][0]=name");
 
   return res.data.map((event) => {
-    const dateObj = new Date(event.datetime);
+    const dateObj = new Date(event.attributes.datetime);
 
     const day = dateObj.toLocaleDateString("es-MX", {
       day: "numeric",
@@ -55,13 +55,15 @@ export async function getEvents(): Promise<EventData[]> {
       timeZone: "America/Mexico_City",
     });
 
-    const categoryName = event.category?.name.toUpperCase() || "Sin categoría"
+const categoryName =
+  event.attributes.category?.data?.attributes?.name.toUpperCase() ||
+  "Sin categoría";
 
     return {
       date,
       time,
-      title: event.title,
-      slug: event.slug,
+      title: event.attributes.title,
+      slug: event.attributes.slug,
       categoryName,
     };
   });

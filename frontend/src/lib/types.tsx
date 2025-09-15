@@ -1,4 +1,12 @@
 
+export interface StrapiData<T> {
+  data: {
+    id: number;
+    attributes: T;
+  };
+}
+
+
 export interface StrapiResponse<T> {
   data: T[];
   meta: {
@@ -11,19 +19,19 @@ export interface StrapiResponse<T> {
   };
 }
 
-export interface StrapiEventCategory {
-    id: number;
-    documentId: string;
-    name: string;
+export interface StrapiEventCategoryAttributes {
+  name: string;
 }
 
 export interface StrapiEvent {
-    id: number;
-    documentId: string;
+  id: number;
+  attributes: {
     datetime: string;
     title: string;
     slug: string;
-    category: StrapiEventCategory;
+    // Usa el nuevo tipo genérico para la categoría
+    category: StrapiData<StrapiEventCategoryAttributes>;
+  };
 }
 
 export interface EventData {
@@ -39,16 +47,20 @@ export interface EventComponentProps {
   key: number;
 }
 
+export interface StrapiCoverAttributes {
+  url: string;
+}
+
 export interface StrapiArticle {
 id: number;
 documentId: string;
+attributes:{
 title: string;
 slug: string;
 description: string;
 createdAt: string;
-cover: {
-url: string;
-};
+cover: StrapiData<StrapiCoverAttributes>;
+}
 }
 
 export interface ArticleData { 
