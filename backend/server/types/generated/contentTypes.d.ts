@@ -432,6 +432,7 @@ export interface ApiArticleArticle extends Schema.CollectionType {
       Attribute.SetMinMaxLength<{
         maxLength: 80;
       }>;
+    imageurl: Attribute.String & Attribute.Required;
     publishedAt: Attribute.DateTime;
     slug: Attribute.UID<'api::article.article', 'title'>;
     title: Attribute.String;

@@ -5,7 +5,7 @@ import {StrapiResponse,StrapiArticle,ArticleData,StrapiEvent,EventData} from "@/
 
 
 export async function getArticles(): Promise<ArticleData[]> {
-    const res = await query<StrapiResponse<StrapiArticle>>("articles?fields[0]=title&fields[1]=slug&fields[2]=description&fields[3]=createdAt&populate[cover][fields][0]=url");
+    const res = await query<StrapiResponse<StrapiArticle>>("articles?fields[0]=title&fields[1]=slug&fields[2]=description&fields[3]=createdAt&fields[4]=imageurl");
     
 
     
@@ -24,7 +24,7 @@ export async function getArticles(): Promise<ArticleData[]> {
 
             const date = `${day} ${month}`;
 
-            const image = `${STRAPI_HOST}${article?.attributes.cover?.data?.attributes?.url}`
+            // const image = `${STRAPI_HOST}${article?.attributes.cover?.data?.attributes?.url}`
             return { title: article.attributes.title, slug:article.attributes.slug, description:article.attributes.description, image,date }
         })
     }
