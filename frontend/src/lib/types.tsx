@@ -75,3 +75,4 @@ export interface ArticleComponentProps {
   article: ArticleData;
   key: number;
 }
+

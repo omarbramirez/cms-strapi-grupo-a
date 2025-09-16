@@ -13,7 +13,7 @@ export default function Home() {
     <ResponsiveMenu/>
     <Hero/>
     <Navbar/>
-    <div className="flex flex-col lg:flex-row items-start justify-center p-[2vw]">
+    <div id="content" className="flex flex-col lg:flex-row items-start justify-center p-[2vw] py-[6vw]">
     <Agenda/>
         <Articles/>
     </div>

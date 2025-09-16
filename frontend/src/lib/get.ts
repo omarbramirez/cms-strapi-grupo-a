@@ -10,7 +10,7 @@ export async function getArticles(): Promise<ArticleData[]> {
 
     
         return res.data.map((article )=> {
-            console.log(article)
+
                   const dateObj = new Date(article.attributes.createdAt);
 
                   const day = dateObj.toLocaleDateString("es-MX", {
