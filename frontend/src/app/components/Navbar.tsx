@@ -8,11 +8,11 @@ import Research from './ui/Research';
 const Navbar = () => {
 
     return (
-        <nav>
-            <div className="hidden lg:flex w-full items-center justify-between mx-auto my-10 border-t border-b py-3 border-gray-700">
+        <nav id="navbar">
+            <div className="hidden lg:flex w-full items-center justify-between mx-auto my-10 border-b py-3 border-gray-700 mt-0">
                 <ul className="sm:flex flex-1 justify-center items-center gap-4">
                     <li>
-                        <Link href="#" className="flex flex-row text-xl justify-center items-center">Agenda <CalendarDays className="ml-2" /></Link>
+                        <Link href="#" className="flex flex-row text-xl justify-center items-center group">Agenda <CalendarDays className="ml-2 group-hover:animate-[shake_0.3s_ease-in-out_infinite]" /></Link>
                     </li>
                     <li className='relative hover:[&>ul]:block'>
                         <Link href="#" className='text-xl'>El grupo</Link>

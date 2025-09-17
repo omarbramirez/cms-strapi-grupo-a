@@ -78,7 +78,7 @@ button{
   opacity: 0;
   filter: blur(0.6rem);
   transition: all 1s ease-in-out;
-  object-fit: cover;
+  object-fit: scale-down;
 }
 
 .logo-image.active {
@@ -93,3 +93,9 @@ button{
   overflow: hidden;
  
 }
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-1px); }
+  40%, 80% { transform: translateX(1px); }
+}
+

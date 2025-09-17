@@ -28,29 +28,28 @@ const ResponsiveMenu = () => {
     window.addEventListener('scroll', handleScroll);
 
     handleScroll();
-
+setIsOpen(false)
     return () => {
       window.removeEventListener('scroll', handleScroll);
       
     }
-setIsOpen(false)
+
   }, [])
 
-
   return (
-    <nav className={`w-full fixed top-0 lg:hidden !z-99`}>
-      <div className={`flex justify-between items-center w-screen p-3 px-5 bg-light border-b border-gray-700 !z-100 absolute top-[0rem]`}  aria-label="Toggle menu">
+    <nav className={`w-full lg:hidden !z-99 fixed`}>
+      <div className={`flex justify-between items-center w-screen p-2 px-5 bg-light border-b border-gray-700 !z-100 absolute top-[0rem]`}  aria-label="Toggle menu">
         {isOpen ? <X className="text-dark" onClick={closeMenu}/>: <Menu className="text-dark" onClick={ openMenu }/>}
-                                <div className={`w-2/5 mx-auto opacity-0  ${isScroll ? "opacity-100" : ""} transform transition-all duration-500`}>
+                                <a href="#hero" className={`w-2/5 mx-auto opacity-0  ${isScroll ? "opacity-100" : ""} transform transition-all duration-500`}>
                           <Image
                             src="/logo.svg"
                             alt="My Icon"
                             width={0}
                             height={0}
                             sizes="100vw"
-                            className="w-full h-auto"
+                            className="w-full h-full"
                           />
-                        </div>
+                        </a>
                         <Research/>
 
       </div>

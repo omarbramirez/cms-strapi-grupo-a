@@ -17,7 +17,7 @@ const Agenda = async () => {
   
   return (
     <div className='w-full box-border lg:w-2/8 mt-10 lg:mt-0'>
-      <h1 className='text-2xl text-center  lg:text-left truncate'>PRÓXIMOS EVENTOS</h1>
+      <h1 className='text-2xl text-center  lg:text-left truncate mx-2'>PRÓXIMOS EVENTOS</h1>
 <div className="flex flex-row lg:flex-col  overflow-x-scroll lg:overflow-x-visible my-5 pb-5">
 
       {events && events.map((event, index) => (

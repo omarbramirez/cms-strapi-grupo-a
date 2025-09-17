@@ -16,9 +16,9 @@ const Articles = async() => {
 
 
   return (
-  <div className=' w-full box-border lg:w-6/8 mt-10 lg:mt-0'>
+  <div className=' w-full box-border lg:w-6/8 mt-10 lg:mt-0 px-5'>
       <h1 className='text-2xl text-center  lg:text-left truncate'>NOTICIAS</h1>
-      <div className='mt-5 px-5'>
+      <div className='mt-5'>
       {articles && articles.map((article, index) => (
         <Article article={article} key={index}/>
       ))

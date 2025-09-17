@@ -2,6 +2,55 @@ import { query } from "@/lib/strapi";
 const { STRAPI_HOST } = process.env;
 import {StrapiResponse,StrapiArticle,ArticleData,StrapiEvent,EventData} from "@/lib/types"
 
+const articles = [
+  {
+    date: "14 SEP",
+    description: "n/a",
+    image: "https://i0.wp.com/corporaciongrupoamerica.com/wp-content/uploads/2025/09/Aurora01-edited.jpg?resize=1080%2C608&ssl=1",
+    slug: "conversatorio-en-homenaje-a-aurora-estrada-y-ayala",
+    title: "Conversatorio en homenaje a Aurora Estrada y Ayala"
+  },
+  {
+    date: "14 SEP",
+    description: "n/a",
+    image: "https://i0.wp.com/corporaciongrupoamerica.com/wp-content/uploads/2025/07/ImagenRevolucionJuliana.jpg?resize=1024%2C683&ssl=1",
+    slug: "se-realizo-el-conversatorio-por-los-100-anos-de-la-revolucion-juliana",
+    title: "Se realizó el conversatorio por los 100 años de la Revolución Juliana"
+  }
+];
+
+
+
+const events = [
+  {
+    categoryName: "PRESENTACIÓN DE LIBRO",
+    date: "16 OCT",
+    slug: "cartografias-del-silencio-de-rosario-a-lmea",
+    time: "07:30",
+    title: "Cartografías del silencio de Rosario A’Lmea"
+  },
+  {
+    categoryName: "MESA REDONDA",
+    date: "30 OCT",
+    slug: "literatura-y-memoria-en-el-ecuador-contemporaneo",
+    time: "14:00",
+    title: "“Literatura y memoria en el Ecuador contemporáneo”"
+  },
+  {
+    categoryName: "CONVERSATORIO",
+    date: "29 OCT",
+    slug: "revistas-culturales-del-siglo-xx-y-su-legado-en-la-critica-literaria",
+    time: "16:45",
+    title: "“Revistas culturales del siglo XX y su legado en la crítica literaria”"
+  },
+  {
+    categoryName: "RECITAL POÉTICO",
+    date: "31 OCT",
+    slug: "recital-poetico-de-jovenes-autores-nuevas-voces-nuevas-rutas",
+    time: "15:15",
+    title: "Recital poético de jóvenes autores: “Nuevas voces, nuevas rutas”"
+  }
+];
 
 
 export async function getArticles(): Promise<ArticleData[]> {
@@ -9,62 +58,69 @@ export async function getArticles(): Promise<ArticleData[]> {
     
 
     
-        return res.data.map((article )=> {
+        // return res.data.map((article )=> {
 
-                  const dateObj = new Date(article.attributes.createdAt);
+        //           const dateObj = new Date(article.attributes.createdAt);
 
-                  const day = dateObj.toLocaleDateString("es-MX", {
-                day: "numeric",
-                timeZone: "America/Mexico_City"
-            });
-            const month = dateObj.toLocaleDateString("es-MX", {
-                month: "short",
-                timeZone: "America/Mexico_City"
-            }).toUpperCase();
+        //           const day = dateObj.toLocaleDateString("es-MX", {
+        //         day: "numeric",
+        //         timeZone: "America/Mexico_City"
+        //     });
+        //     const month = dateObj.toLocaleDateString("es-MX", {
+        //         month: "short",
+        //         timeZone: "America/Mexico_City"
+        //     }).toUpperCase();
 
-            const date = `${day} ${month}`;
-
-            // const image = `${STRAPI_HOST}${article?.attributes.cover?.data?.attributes?.url}`
-            return { title: article.attributes.title, slug:article.attributes.slug, description:article.attributes.description, image: article.attributes.imageurl ,date }
-        })
+        //     const date = `${day} ${month}`;
+        //     console.log( { title: article.attributes.title, slug:article.attributes.slug, description:article.attributes.description, image: article.attributes.imageurl ,date })
+        //     return { title: article.attributes.title, slug:article.attributes.slug, description:article.attributes.description, image: article.attributes.imageurl ,date }
+        // })
+        return articles;
     }
 
 export async function getEvents(): Promise<EventData[]> {
   const res = await query<StrapiResponse<StrapiEvent>>(
     "events?fields[0]=datetime&fields[1]=title&fields[2]=slug&populate[category][fields][0]=name");
 
-  return res.data.map((event) => {
-    const dateObj = new Date(event.attributes.datetime);
+//   return res.data.map((event) => {
+//     const dateObj = new Date(event.attributes.datetime);
 
-    const day = dateObj.toLocaleDateString("es-MX", {
-      day: "numeric",
-      timeZone: "America/Mexico_City",
-    });
-    const month = dateObj
-      .toLocaleDateString("es-MX", {
-        month: "short",
-        timeZone: "America/Mexico_City",
-      })
-      .toUpperCase();
+//     const day = dateObj.toLocaleDateString("es-MX", {
+//       day: "numeric",
+//       timeZone: "America/Mexico_City",
+//     });
+//     const month = dateObj
+//       .toLocaleDateString("es-MX", {
+//         month: "short",
+//         timeZone: "America/Mexico_City",
+//       })
+//       .toUpperCase();
 
-    const date = `${day} ${month}`;
-    const time = dateObj.toLocaleTimeString("es-MX", {
-      hour: "2-digit",
-      minute: "2-digit",
-      hour12: false,
-      timeZone: "America/Mexico_City",
-    });
+//     const date = `${day} ${month}`;
+//     const time = dateObj.toLocaleTimeString("es-MX", {
+//       hour: "2-digit",
+//       minute: "2-digit",
+//       hour12: false,
+//       timeZone: "America/Mexico_City",
+//     });
 
-const categoryName =
-  event.attributes.category?.data?.attributes?.name.toUpperCase() ||
-  "Sin categoría";
-
-    return {
-      date,
-      time,
-      title: event.attributes.title,
-      slug: event.attributes.slug,
-      categoryName,
-    };
-  });
+// const categoryName =
+//   event.attributes.category?.data?.attributes?.name.toUpperCase() ||
+//   "Sin categoría";
+//   console.log({
+//       date,
+//       time,
+//       title: event.attributes.title,
+//       slug: event.attributes.slug,
+//       categoryName,
+//     })
+//     return {
+//       date,
+//       time,
+//       title: event.attributes.title,
+//       slug: event.attributes.slug,
+//       categoryName,
+//     };
+//   });
+return events;
 }
