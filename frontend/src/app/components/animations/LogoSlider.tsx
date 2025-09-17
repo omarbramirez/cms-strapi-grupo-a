@@ -7,8 +7,8 @@ const logos = [
   { src: '/logos/logo01-light.png', alt: 'Logo 1925', year: '1925', desc: 'En sus orígenes, la revista surge como órgano cultural frente a un vacío editorial.' },
   { src: '/logos/logo02-light.png', alt: 'Logo 1927', year: '1927', desc: 'En sus páginas se gesta y consolida el indigenismo como corriente literaria nacional.' },
   { src: '/logos/logo03-light.png', alt: 'Logo 1944', year: '1944', desc: 'La publicación se diversifica con números monográficos y antologías de poesía.' },
-  { src: '/logos/logo02-light.png', alt: 'Logo 1947', year: '1947', desc: 'Desde su seno nacen instituciones culturales claves como la Casa de la Cultura.' },
-   { src: '/logos/logo04-light.png', alt: 'Logo 2005', year: '2005', desc: 'Superando crisis y décadas, la revista mantiene vigencia y prestigio intelectual.' }
+  { src: '/logos/logos-light.png', alt: 'Logo 1947', year: '1947', desc: 'Desde su seno nacen instituciones culturales claves como la Casa de la Cultura.' },
+   { src: '/logos/logo05-light.png', alt: 'Logo 2005', year: '2005', desc: 'Superando crisis y décadas, la revista mantiene vigencia y prestigio intelectual.' }
 ];
 
 const LogoSlider = () => {
