@@ -23,7 +23,7 @@ const LogoSlider = () => {
     return () => clearInterval(intervalId);
   }, []);
 
-  const spanRef = useRef(null);
+  const spanRef = useRef<HTMLSpanElement | null>(null);
   const [spanHeight, setSpanHeight] = useState(0);
 
   useEffect(() => {
