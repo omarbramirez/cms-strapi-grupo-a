@@ -4,18 +4,39 @@ import {StrapiResponse,StrapiArticle,ArticleData,StrapiEvent,EventData} from "@/
 
 const articles = [
   {
-    date: "14 SEP",
-    description: "n/a",
+    date: "01 SEP",
+    description: "En el marco de los 100 años de la publicación de Como el incienso, obra fundamental de la escritora ecuatoriana Aurora Estrada y Ayala...",
     image: "https://i0.wp.com/corporaciongrupoamerica.com/wp-content/uploads/2025/09/Aurora01-edited.jpg?resize=1080%2C608&ssl=1",
     slug: "conversatorio-en-homenaje-a-aurora-estrada-y-ayala",
     title: "Conversatorio en homenaje a Aurora Estrada y Ayala"
   },
   {
-    date: "14 SEP",
-    description: "n/a",
+    date: "28 JUL",
+    description: "El pasado sábado 26 de julio, en el Centro Cultural Carlos Fuentes (Quito), la Corporación Cultural Grupo América...",
     image: "https://i0.wp.com/corporaciongrupoamerica.com/wp-content/uploads/2025/07/ImagenRevolucionJuliana.jpg?resize=1024%2C683&ssl=1",
     slug: "se-realizo-el-conversatorio-por-los-100-anos-de-la-revolucion-juliana",
     title: "Se realizó el conversatorio por los 100 años de la Revolución Juliana"
+  },
+    {
+    date: "24 JUL",
+    description: "El escenario del Teatro Variedades se llenó de versos y emociones con el recital 'Con piel de lobos'...",
+    image: "https://i0.wp.com/corporaciongrupoamerica.com/wp-content/uploads/2025/07/CesaryValeria.jpg?resize=1024%2C649&ssl=1",
+    slug: "valeria-guzmán-y-césar-eduardo-carrión-en-un-mano-a-mano-con-piel-de-lobos",
+    title: "Valeria Guzmán y César Eduardo Carrión en un mano a mano «Con piel de lobos»"
+  },
+    {
+    date: "19 JUL",
+    description: "La presentación del texto contó con la participación de Julio Pazos Barrera, presidente de nuestro grupo, y Jacqueline Costales...",
+    image: "https://i0.wp.com/corporaciongrupoamerica.com/wp-content/uploads/2025/06/ThaliaCedeno.jpg?resize=1024%2C658&ssl=1",
+    slug: "thalía-cedeño-presentó-sus-palabras-para-recordar",
+    title: "Thalía Cedeño presentó sus «Palabras para recordar»"
+  },
+    {
+    date: "19 JUN",
+    description: "Desde el Grupo Cultural América, queremos extender nuestras más sinceras felicitaciones...",
+    image: "https://i0.wp.com/corporaciongrupoamerica.com/wp-content/uploads/2025/06/FeriaDelLibro.jpg?resize=1024%2C521&ssl=1",
+    slug: "felicitamos-a-santiago-vizcaíno-por-su-impecable-trabajo-en-la-organización-de-la-filq-2025",
+    title: "Felicitamos a Santiago Vizcaíno por su impecable trabajo en la organización de la FILQ 2025"
   }
 ];
 
@@ -27,28 +48,36 @@ const events = [
     date: "16 OCT",
     slug: "cartografias-del-silencio-de-rosario-a-lmea",
     time: "07:30",
-    title: "Cartografías del silencio de Rosario A’Lmea"
+    title: "Cartografías del silencio de Rosario A’Lmea",
+    location: "Centro Cultural Carlos Fuentes | Av. Seis de Diciembre y Colón",
+    dispo: "Entrada libre"
   },
   {
     categoryName: "MESA REDONDA",
-    date: "30 OCT",
+    date: "20 OCT",
     slug: "literatura-y-memoria-en-el-ecuador-contemporaneo",
     time: "14:00",
-    title: "“Literatura y memoria en el Ecuador contemporáneo”"
+    title: "Literatura y memoria en el Ecuador contemporáneo",
+    location: "Biblioteca Nacional Eugenio Espejo | Av. 6 de Diciembre y Patria",
+    dispo: "Entrada libre"
   },
   {
     categoryName: "CONVERSATORIO",
     date: "29 OCT",
     slug: "revistas-culturales-del-siglo-xx-y-su-legado-en-la-critica-literaria",
     time: "16:45",
-    title: "“Revistas culturales del siglo XX y su legado en la crítica literaria”"
+    title: "Revistas culturales del siglo XX y su legado en la crítica literaria",
+    location: "Casa de la Cultura Ecuatoriana Benjamín Carrión | Av. 6 de Diciembre y Patria",
+    dispo: "Entrada libre"
   },
   {
     categoryName: "RECITAL POÉTICO",
-    date: "31 OCT",
+    date: "30 OCT",
     slug: "recital-poetico-de-jovenes-autores-nuevas-voces-nuevas-rutas",
     time: "15:15",
-    title: "Recital poético de jóvenes autores: “Nuevas voces, nuevas rutas”"
+    title: "Nuevas voces, nuevas rutas",
+    location: "Teatro Sucre | Calle Manabí entre Guayaquil y Flores",
+    dispo: "Entrada libre"
   }
 ];
 

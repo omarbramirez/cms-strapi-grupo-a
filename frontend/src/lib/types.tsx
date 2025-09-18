@@ -40,6 +40,8 @@ time: string;
 title: string;
 slug: string;
 categoryName: string; 
+location: string;
+dispo: string;
 }
 
 export interface EventComponentProps {

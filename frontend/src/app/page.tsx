@@ -4,6 +4,7 @@ import Articles from "./components/Articles";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Agenda from "./components/Agenda";
+import PopUp from "./components/PopUp";
 import Newsletter from "./components/Newsletter";
 import ResponsiveMenu from "./components/ResponsiveMenu";
 
@@ -13,7 +14,8 @@ export default function Home() {
     <ResponsiveMenu/>
     <Hero/>
     <Navbar/>
-    <div id="content" className="flex flex-col lg:flex-row items-start justify-center p-[2vw] py-[6vw]">
+    <PopUp/>
+    <div id="content" className="relative flex flex-col lg:flex-row items-start justify-center p-[2vw] ">
     <Agenda/>
         <Articles/>
     </div>

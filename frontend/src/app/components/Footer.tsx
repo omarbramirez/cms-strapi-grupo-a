@@ -5,11 +5,11 @@ const Footer = () => {
     <footer className="bg-[var(--color-dark)] py-10">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 px-6">
         {/* Sección 1 */}
-        <div>
+        <div className=" text-center sm:text-left ">
           <h3 className="text-lg mb-4 text-[var(--color-light)]">Menú Principal</h3>
           <ul className="space-y-2 text-sm">
             <li className="font-medium"><a href="#">El Grupo:</a></li>
-            <ul className="ml-4 space-y-1 flex flex-col justify-center">
+            <ul className="ml-0 sm:ml-4 space-y-1 flex flex-col justify-center">
               <li><a href="#" >Fundadores</a></li>
               <li><a href="#">Historia</a></li>
               <li><a href="#">Objetivos</a></li>
@@ -26,7 +26,7 @@ const Footer = () => {
         </div>
 
         {/* Sección 2 */}
-        <div>
+        <div className=" text-center sm:text-left ">
           <h3 className="text-lg mb-4 text-[var(--color-light)]">Información</h3>
           <ul className="space-y-2 text-sm">
             <li><a href="#">Directorio</a></li>
@@ -36,7 +36,7 @@ const Footer = () => {
         </div>
 
         {/* Sección 3 */}
-        <div>
+        <div className=" text-center sm:text-left ">
           <h3 className="text-lg mb-4 text-[var(--color-light)]">¡Síguenos en nuestras redes!</h3>
           <ul className="space-y-2 text-sm">
             <li>
@@ -58,15 +58,20 @@ const Footer = () => {
                 YouTube
               </a>
             </li>
+            <li>
+              <a href="#" aria-label="YouTube">
+                Telegram
+              </a>
+            </li>
           </ul>
         </div>
       </div>
 
       {/* Línea inferior */}
       <div className="mt-10 border-t border-gray-700 pt-4 text-center text-xs text-gray-400">
- &copy; {new Date().getFullYear()}                       <a
-                href="https://omarbramirez.com" className="!inline !text-gray-400 " target="_blank"
-              >Omar B Ramírez.</a> Todos los derechos reservados.
+        &copy; {new Date().getFullYear()}                       <a
+          href="https://omarbramirez.com" className="!inline !text-gray-400 " target="_blank"
+        >Omar B Ramírez.</a> Todos los derechos reservados.
       </div>
     </footer>
   );
