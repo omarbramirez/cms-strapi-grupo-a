@@ -25,7 +25,7 @@ const PopUp = () => {
   if (!show) return null;
   return (
 
-    <div className={`fixed inset-0 m-auto w-[80vw] sm:w-[50vw] h-[80vh] sm:h-[60vh] bg-white z-50 shadow-xl/50 flex flex-col sm:flex-row justify-center items-start rounded-2xl overflow-hidden`}>
+    <div className={`fixed inset-0 m-auto w-[80vw] max-w-[600px] sm:w-[50vw] h-[80vh] sm:h-[60vh] bg-white z-50 shadow-xl/50 flex flex-col sm:flex-row justify-center items-start rounded-2xl overflow-hidden`}>
                <X onClick={() => setShow(false)} className="absolute top-3 right-3 w-[2em] h-[2em] rounded-md  cursor-pointer text-dark bg-white z-51  block sm:hidden"
 />
 

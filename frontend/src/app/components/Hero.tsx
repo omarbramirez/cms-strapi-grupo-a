@@ -18,7 +18,7 @@ const Hero = () => {
           <h1 className='text-3xl text-center !text-light cursor-default'>¡Un legado de casi un siglo, forjado en cada página!</h1>
       </div>
     
-      <div className='block lg:hidden h-screen w-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2'>
+      <div className='block lg:hidden h-screen w-full absolute '>
       <Image src={`/personajes.png`} alt={`Logo First Part`}
           width={0}
           height={0}

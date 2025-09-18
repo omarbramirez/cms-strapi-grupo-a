@@ -54,14 +54,14 @@ setIsOpen(false)
 
       </div>
       <ul
-        className={` bg-light ${isOpen ? " absolute top-[0rem]" : "absolute top-[-40rem]"} w-full h-[40rem] shadow-lg flex flex-col justify-center gap-4 p-6 transform transition-all duration-500 ease-in-out !z-98 bg-light/80 backdrop-blur-lg shadow-sm`}
+        className={` bg-light ${isOpen ? " absolute top-[0rem]" : "absolute top-[-100vh]"} w-full h-[100vh] shadow-lg flex flex-col justify-center gap-4 p-6 transform transition-all duration-500 ease-in-out !z-98 bg-light/80 backdrop-blur-lg shadow-sm`}
       >
         <li>
-          <Link href="#" className="flex flex-row text-xl items-center">Agenda <CalendarDays className="ml-2" /></Link>
+          <Link href="#" className="flex flex-row text-xl items-center text-dark">Agenda <CalendarDays className="ml-2" /></Link>
 
         </li>
                     <li>
-                        <Link href="#" className='text-xl'>El grupo</Link>
+                        <Link href="#" className='text-xl text-dark'>El grupo</Link>
 
                         <ul className="block p-4 space-y-2 mt-2 ">
                             <li><Link href="#" className='text-xl'>Fundadores</Link></li>
