@@ -2,6 +2,7 @@
 import React from 'react';
 import Image from 'next/image';
 import LogoSlider from './animations/LogoSlider';
+import Typewriter from './animations/Typewriter';
 import { CircleChevronDown } from 'lucide-react';
 
 
@@ -13,9 +14,9 @@ const Hero = () => {
       <div className='absolute top-0 z-2 w-full h-screen bg-gradient-to-t from-black/75 to-transparent'></div>
       <div className=" w-11/12 sm:w-2/3 h-auto pt-15 z-3 ">
       <a href="#navbar">
-      <CircleChevronDown size={45} className='text-white z-3 m-auto mb-5 text-4xl cursor-pointer transition-all duration-300 ease-in-out hover:translate-y-2 hover:animate-[shake_0.3s_ease-in-out_infinite]'/>
+      <CircleChevronDown size={45} className="text-white z-3 m-auto mb-5 text-4xl cursor-pointer animate-[bounceY_3s_ease-in-out_infinite]"/>
       </a>
-          <h1 className='text-3xl text-center !text-light cursor-default'>¡Un legado de casi un siglo, forjado en cada página!</h1>
+          <h1 className='text-3xl text-center !text-light cursor-default'><Typewriter text="¡Un legado de casi un siglo, forjado en cada página!" delay={100}/></h1>
       </div>
     
       <div className='block lg:hidden h-screen w-full absolute '>

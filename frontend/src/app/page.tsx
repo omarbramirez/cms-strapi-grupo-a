@@ -15,7 +15,7 @@ export default function Home() {
     <Hero/>
     <Navbar/>
     <PopUp/>
-    <div id="content" className="relative flex flex-col lg:flex-row items-start justify-center p-[2vw] ">
+    <div id="content" className="relative flex flex-col lg:flex-row items-start justify-center p-[2vw]  ">
     <Agenda/>
         <Articles/>
     </div>

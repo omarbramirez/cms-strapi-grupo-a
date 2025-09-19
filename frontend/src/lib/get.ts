@@ -81,35 +81,42 @@ const events = [
   }
 ];
 
-
 export async function getArticles(): Promise<ArticleData[]> {
-    const res = await query<StrapiResponse<StrapiArticle>>("articles?fields[0]=title&fields[1]=slug&fields[2]=description&fields[3]=createdAt&fields[4]=imageurl");
+  return articles;
+}
+
+// export async function getArticles(): Promise<ArticleData[]> {
+//     const res = await query<StrapiResponse<StrapiArticle>>("articles?fields[0]=title&fields[1]=slug&fields[2]=description&fields[3]=createdAt&fields[4]=imageurl");
     
 
     
-        // return res.data.map((article )=> {
+//         return res.data.map((article )=> {
 
-        //           const dateObj = new Date(article.attributes.createdAt);
+//                   const dateObj = new Date(article.attributes.createdAt);
 
-        //           const day = dateObj.toLocaleDateString("es-MX", {
-        //         day: "numeric",
-        //         timeZone: "America/Mexico_City"
-        //     });
-        //     const month = dateObj.toLocaleDateString("es-MX", {
-        //         month: "short",
-        //         timeZone: "America/Mexico_City"
-        //     }).toUpperCase();
+//                   const day = dateObj.toLocaleDateString("es-MX", {
+//                 day: "numeric",
+//                 timeZone: "America/Mexico_City"
+//             });
+//             const month = dateObj.toLocaleDateString("es-MX", {
+//                 month: "short",
+//                 timeZone: "America/Mexico_City"
+//             }).toUpperCase();
 
-        //     const date = `${day} ${month}`;
-        //     console.log( { title: article.attributes.title, slug:article.attributes.slug, description:article.attributes.description, image: article.attributes.imageurl ,date })
-        //     return { title: article.attributes.title, slug:article.attributes.slug, description:article.attributes.description, image: article.attributes.imageurl ,date }
-        // })
-        return articles;
-    }
+//             const date = `${day} ${month}`;
+//             console.log( { title: article.attributes.title, slug:article.attributes.slug, description:article.attributes.description, image: article.attributes.imageurl ,date })
+//             return { title: article.attributes.title, slug:article.attributes.slug, description:article.attributes.description, image: article.attributes.imageurl ,date }
+//         })
+
+//     }
+
 
 export async function getEvents(): Promise<EventData[]> {
-  const res = await query<StrapiResponse<StrapiEvent>>(
-    "events?fields[0]=datetime&fields[1]=title&fields[2]=slug&populate[category][fields][0]=name");
+return events;
+}
+// export async function getEvents(): Promise<EventData[]> {
+//   const res = await query<StrapiResponse<StrapiEvent>>(
+//     "events?fields[0]=datetime&fields[1]=title&fields[2]=slug&populate[category][fields][0]=name");
 
 //   return res.data.map((event) => {
 //     const dateObj = new Date(event.attributes.datetime);
@@ -151,5 +158,5 @@ export async function getEvents(): Promise<EventData[]> {
 //       categoryName,
 //     };
 //   });
-return events;
-}
+
+// }

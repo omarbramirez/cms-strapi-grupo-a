@@ -5,7 +5,7 @@ import {ArticleData,ArticleComponentProps} from '@/lib/types'
 
 
 
-const Article = ({article, key}: ArticleComponentProps) => {
+const Article = ({article}: ArticleComponentProps) => {
   return (
 <Link href="#" className="w-full group mt-1 flex flex-col !cursor-pointer ">
   <div className="overflow-hidden rounded-2xl h-60 mb-2">
