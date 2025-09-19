@@ -1,9 +1,7 @@
-// app/loading.tsx
 import Image from 'next/image'
 import React from 'react'
 
-
-export default function Loading() {
+const Template = () => {
   return (
 <div className="w-screen h-screen flex flex-col items-center justify-center bg-primary uppercase">
     <div className='relative w-10/12 mx-auto mb-5 h-20 border-box '>
@@ -21,6 +19,7 @@ export default function Loading() {
         
       
     </div>
-  );
+  )
 }
 
+export default Template

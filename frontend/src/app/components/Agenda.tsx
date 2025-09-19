@@ -1,6 +1,6 @@
 import { getEvents } from '@/lib/get'
 import React from 'react'
-import Event from './ui/Eventb';
+import Event from './ui/Event';
 
 import {EventData} from '@/lib/types'
 import { div } from 'three/tsl';

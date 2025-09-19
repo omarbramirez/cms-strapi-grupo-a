@@ -57,29 +57,29 @@ setIsOpen(false)
         className={` bg-light ${isOpen ? " absolute top-[0rem]" : "absolute top-[-100vh]"} w-full h-[100vh] shadow-lg flex flex-col justify-center gap-4 p-6 transform transition-all duration-500 ease-in-out !z-98 bg-light/80 backdrop-blur-lg shadow-sm`}
       >
         <li>
-          <Link href="#" className="flex flex-row text-xl items-center text-dark">Agenda <CalendarDays className="ml-2" /></Link>
+          <Link href="#" className="flex flex-row text-xl items-center responsiveLink">Agenda <CalendarDays className="ml-2" /></Link>
 
         </li>
                     <li>
-                        <Link href="#" className='text-xl text-dark'>El grupo</Link>
+                        <Link href="#" className='text-xl responsiveLink'>El grupo</Link>
 
                         <ul className="block p-4 space-y-2 mt-2 ">
-                            <li><Link href="#" className='text-xl'>Fundadores</Link></li>
-                            <li><Link href="#" className='text-xl'>Historia</Link></li>
-                            <li><Link href="#" className='text-xl'>Objetivos</Link></li>
-                            <li><Link href="#" className='text-xl'>Miembros Actuales</Link></li>
-                            <li><Link href="#" className='text-xl'>Directiva</Link></li>
+                            <li><Link href="#" className='text-xl responsiveLink'>Fundadores</Link></li>
+                            <li><Link href="#" className='text-xl responsiveLink'>Historia</Link></li>
+                            <li><Link href="#" className='text-xl responsiveLink'>Objetivos</Link></li>
+                            <li><Link href="#" className='text-xl responsiveLink'>Miembros Actuales</Link></li>
+                            <li><Link href="#" className='text-xl responsiveLink'>Directiva</Link></li>
                         </ul>
                     </li>
                     <li>
-                        <Link href="#" className='text-xl'>Revista América</Link>
+                        <Link href="#" className='text-xl responsiveLink'>Revista América</Link>
                             <ul className="block text-white p-4 space-y-2 mt-2">
-                            <li><Link href="#" className='text-xl'>Historia Revista América</Link></li>
-                            <li><Link href="#" className='text-xl'>Descargar Revista América</Link></li>
+                            <li><Link href="#" className='text-xl responsiveLink'>Historia Revista América</Link></li>
+                            <li><Link href="#" className='text-xl responsiveLink'>Descargar Revista América</Link></li>
                         </ul>
                     </li>
         <li>
-          <Link href="#" className='text-xl'>Contacto</Link>
+          <Link href="#" className='text-xl responsiveLink'>Contacto</Link>
         </li>
       </ul>
     </nav>
