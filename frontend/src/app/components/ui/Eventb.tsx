@@ -1,11 +1,16 @@
+'use client'
 import React from 'react'
 import Link from "next/link"
 import { EventComponentProps } from '@/lib/types'
 import { MapPinned, CalendarClock, CircleCheck } from 'lucide-react';
+import { motion } from "motion/react"
 
-const Event = ({ event, key }: EventComponentProps) => {
+
+const Event = ({ event, index }: EventComponentProps) => {
   return (
-    <div
+    <motion.div
+        whileHover={{ scale: 0.97 }} 
+        transition={{ delay: 0.1, duration: 0.3 }}
       className="
         relative overflow-hidden group
         min-h-38 min-w-60 flex flex-col flex-1 lg:shrink-0
@@ -46,7 +51,7 @@ const Event = ({ event, key }: EventComponentProps) => {
       >
         {event.title}
       </Link>
-    </div>
+    </motion.div>
   )
 }
 

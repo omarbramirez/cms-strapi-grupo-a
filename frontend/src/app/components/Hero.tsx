@@ -16,7 +16,7 @@ const Hero = () => {
       <a href="#navbar">
       <CircleChevronDown size={45} className="text-white z-3 m-auto mb-5 text-4xl cursor-pointer animate-[bounceY_3s_ease-in-out_infinite]"/>
       </a>
-          <h1 className='text-3xl text-center !text-light cursor-default'><Typewriter text="¡Un legado de casi un siglo, forjado en cada página!" delay={100}/></h1>
+          <h1 className='text-3xl text-center !text-light cursor-default'><Typewriter text="¡Un legado de casi un siglo, forjado en cada página!" delay={20}/></h1>
       </div>
     
       <div className='block lg:hidden h-screen w-full absolute '>

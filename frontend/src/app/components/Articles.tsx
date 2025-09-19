@@ -7,6 +7,7 @@ import {ArticleData} from '@/lib/types'
 import Link from "next/link"
 import { useInView } from '@/app/hooks/useInView'
 import { div } from "three/tsl";
+import { motion } from "framer-motion";
 
 const Articles = () => {
   
@@ -50,7 +51,7 @@ const Articles = () => {
       {articles && articles.map((article, index) => (
         index !== 0 && (
           <div key={index}>
-<Article article={article} />
+<Article article={article} index={index} />
           </div>
 
         ) 
@@ -58,9 +59,9 @@ const Articles = () => {
       }
       </div>
       <div className='pt-20'>
-      <button             className="block px-6 py-3 mx-auto rounded-xl bg-secondary opacity-90  text-white font-semibold hover:opacity-100 transition-all duration-300 ease-in-out">
+     <motion.button whileHover={{ scale: 0.95 }}            className="block px-6 py-3 mx-auto rounded-xl bg-secondary opacity-90  text-white font-semibold hover:opacity-100 transition-all duration-300 ease-in-out">
         Cargar más
-      </button>
+      </motion.button>
       </div>
     </div>
   )

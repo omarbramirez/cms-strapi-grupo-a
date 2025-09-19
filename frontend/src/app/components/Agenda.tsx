@@ -3,6 +3,7 @@ import React from 'react'
 import Event from './ui/Eventb';
 
 import {EventData} from '@/lib/types'
+import { div } from 'three/tsl';
 
 const Agenda = async () => {
   let events: EventData[] = [];
@@ -21,7 +22,10 @@ const Agenda = async () => {
 <div className="flex flex-row lg:flex-col  overflow-x-scroll lg:overflow-x-visible my-5 pb-5">
 
       {events && events.map((event, index) => (
-        <Event event={event} key={index}/>
+        <div  key={index}>
+<Event event={event} index={index}/>
+        </div>
+        
       ))
       
     }

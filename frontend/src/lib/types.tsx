@@ -46,7 +46,7 @@ dispo: string;
 
 export interface EventComponentProps {
   event: EventData;
-  key: number;
+  index: number;
 }
 
 export interface StrapiCoverAttributes {
@@ -74,6 +74,7 @@ export interface ArticleData {
 }
 
 export interface ArticleComponentProps {
-  article: ArticleData; 
+  article: ArticleData;
+  index: number;
 }
 

@@ -3,6 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { X } from 'lucide-react';
 import Image from 'next/image';
 import Link from "next/link"
+import { motion } from "framer-motion";
 type PopupStatus = "banner" | "open" | "dismissed";
 
 const PopUp: React.FC = () => {
@@ -22,7 +23,7 @@ const PopUp: React.FC = () => {
         timeoutRef.current = setTimeout(() => {
           setStatus("open");
           timeoutRef.current = null; // limpiar referencia
-        }, 1000);
+        }, 9000);
       } else {
         // Si el usuario sube antes de que se cumpla el timeout, lo cancelamos
         if (timeoutRef.current) {
@@ -54,7 +55,7 @@ const PopUp: React.FC = () => {
   };
 
     if (status === "banner") { return (<div className='fixed bottom-0 !z-49 w-full'>
-<Link href="#" className='flex justify-center gradient-background  uppercase font-bold font-heading !text-light py-1 pt-2'>Descargar Revista América
+<Link href="#" className='flex justify-center items-center gradient-background  uppercase font-bold font-heading !text-light py-2'>Descargar Revista América
 </Link>
   </div>)}
 
@@ -80,12 +81,12 @@ if (status === "open") {
            <p className='block mt-4 font-body font-normal text-xl text-[var(--color-dark)] '>El Grupo América se complace en poner a su disposición su Revista América desde el primer número de agosto de 1925.
 
 </p>
-                    <button
+                    <motion.button whileHover={{ scale: 0.95 }} 
             type="submit"
             className="px-6 mx-auto sm:mx-0 py-3 bg-primary opacity-90  text-white font-semibold hover:opacity-100 transition-all duration-300 ease-in-out mt-3 rounded-xl"
           >
             Descargar
-          </button>
+          </motion.button>
         </section>
     </div>
   )}

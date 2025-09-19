@@ -2,7 +2,7 @@
 import { useRef,useState, useEffect } from 'react';
 import Image from 'next/image';
 import { div } from 'three/tsl';
-
+import { motion, useMotionValue, useTransform, animate } from "framer-motion";
 const logos = [
   { src: '/logos/logo01-light.png', alt: 'Logo 1925', year: '1925', desc: 'En sus orígenes, la revista surge como órgano cultural frente a un vacío editorial.' },
   { src: '/logos/logo02-light.png', alt: 'Logo 1927', year: '1927', desc: 'En sus páginas se gesta y consolida el indigenismo como corriente literaria nacional.' },
@@ -14,6 +14,9 @@ const logos = [
 const LogoSlider = () => {
   const [currentLogoIndex, setCurrentLogoIndex] = useState(0);
 
+const count = useMotionValue(1925);
+  const rounded = useTransform(count, Math.round);
+
   useEffect(() => {
     const intervalId = setInterval(() => {
       setCurrentLogoIndex((prevIndex) =>
@@ -22,6 +25,14 @@ const LogoSlider = () => {
     }, 4000); 
     return () => clearInterval(intervalId);
   }, []);
+
+useEffect(() => {
+  const animation = animate(count, parseInt(logos[currentLogoIndex].year), {
+    duration: 1,
+  });
+
+  return () => animation.stop(); // cleanup
+}, [currentLogoIndex, count]);
 
   const spanRef = useRef<HTMLSpanElement | null>(null);
   const [spanHeight, setSpanHeight] = useState(0);
@@ -60,9 +71,9 @@ const LogoSlider = () => {
     </div>
       <div className='w-full relative' style={{ height: spanHeight }}>
                 {logos.map((logo, index) => (
-                  <span  ref={index === currentLogoIndex ? spanRef : null} key={index} className={`w-auto absolute top-0 left-1/2 -translate-x-1/2 !text-light logo-image cursor-default pt-5 ${index === currentLogoIndex ? 'active' : ''}`}> 
-                <h2 className={`text-3xl font-bold`}>{logo.year}</h2>
-                <p className='text-2xl'>{logo.desc}</p>
+                  <span  ref={index === currentLogoIndex ? spanRef : null} key={index} className={`w-auto absolute top-0 left-1/2 -translate-x-1/2 !text-light  cursor-default pt-5`}> 
+                <motion.h2 className={`text-3xl font-bold`}>{rounded}</motion.h2>
+                <p className={`text-2xl logo-image ${index === currentLogoIndex ? 'active' : ''}`}>{logo.desc}</p>
 </span>
      ))}
         </div>

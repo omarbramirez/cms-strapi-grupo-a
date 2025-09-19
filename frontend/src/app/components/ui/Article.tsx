@@ -1,13 +1,19 @@
 import React from 'react'
 import Link from "next/link"
+import { motion } from "motion/react"
 
 import {ArticleData,ArticleComponentProps} from '@/lib/types'
 
 
 
-const Article = ({article}: ArticleComponentProps) => {
+const Article = ({article, index}: ArticleComponentProps) => {
   return (
-<Link href="#" className="w-full group mt-1 flex flex-col !cursor-pointer ">
+<motion.a 
+    initial={{ y: 20, opacity: 0 }}
+    whileInView={{ y: 0, opacity: 1 }}
+    transition={{ delay: index * 0.2, duration: 0.9 }}
+    viewport={{ once: true }}
+href="#" className="w-full group mt-1 flex flex-col !cursor-pointer ">
   <div className="overflow-hidden rounded-2xl h-60 mb-2">
     <img
       src={article.image}
@@ -22,7 +28,7 @@ const Article = ({article}: ArticleComponentProps) => {
       {article.title}
     </span>
     <p className='block mt-4 font-body font-normal text-xl text-[var(--color-dark)] '>{article.description}</p>
-</Link>
+</motion.a>
 
   )
 }
