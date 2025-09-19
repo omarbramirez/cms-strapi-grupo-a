@@ -23,7 +23,7 @@ const PopUp: React.FC = () => {
         timeoutRef.current = setTimeout(() => {
           setStatus("open");
           timeoutRef.current = null; // limpiar referencia
-        }, 9000);
+        }, 5000);
       } else {
         // Si el usuario sube antes de que se cumpla el timeout, lo cancelamos
         if (timeoutRef.current) {
